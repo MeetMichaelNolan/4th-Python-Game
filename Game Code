@@ -1,0 +1,29 @@
+import random
+import time
+
+print("Welcome to Nummy hosted by Taylor Swift! Nummy is a game that allows the user to input a random number between 1 and 100. The computer will then randomly guess your number.")
+
+min = 1
+max = 100
+score = 0
+
+y = int(input("What is the magic number you want the computer to guess? "))
+if y < min:
+    print("Invalid number try again.")
+    quit()
+if y > max:
+    print("Invalid number.")
+    quit()
+
+while True:
+    x = random.randint(min, max)
+    print("Computer: " + str(x))
+    if x == y:
+        print("That's the number I'm looking for!")
+        break
+    else:
+        time.sleep(.25)
+        score += 1
+        continue
+
+print("I guessed your number in " + str(score) + " guesses.")
